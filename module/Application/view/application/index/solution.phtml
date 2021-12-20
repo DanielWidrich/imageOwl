@@ -1,0 +1,44 @@
+<h2>Solution</h2>
+<br>
+<p>Note: If data exists for r1, r2, or r3 the average will always return one decimal.</p>
+<p>Note: If no data exist in any single row for all columns, r1, r2, r3, upon submitting an error will be returned</p>
+<br>
+<button onclick="addRow()">Add Row</button>
+<br>
+<br>
+<form method="post" action="/report">
+    <table class="table-bordered" id="theTable" style="margin: auto; width: 100%" >
+        <tr>
+            <?php
+            foreach ($data['jsonData']['columns'] as $columnArr) {
+                foreach ($columnArr as $keyName => $value) {
+                    if ('name' == $keyName) { ?>
+                        <td style="text-align: center;"><?php echo $value ?></td>
+                    <?php }
+                }
+            }
+            ?>
+            <td>
+                <input type="submit" name="formSubmit" value="Submit" style="background-color: rebeccapurple; color: white; border: none">
+                <input type="hidden" name="rowCount" id="rowCount" value="1">
+            </td>
+        </tr>
+        <tr class="dataRow" id="0">
+            <td><input class="r1" id="r10" name="r10" type="number" style="border: none" onchange="rowMath(this)"></td>
+            <td><input class="r2" id="r20" name="r20" type="number" style="border: none" onchange="rowMath(this)"></td>
+            <td><input class="r3" id="r30" name="r30" type="number" style="border: none" onchange="rowMath(this)"></td>
+            <td>
+                <input class="avg" id="avg0" name="avg0" type="hidden">
+                <span class="avgSpan" id="avgSpan0"></span>
+            </td>
+            <td>
+                <input class="sum" id="sum0" name="sum0" type="hidden">
+                <span class="sumSpan" id="sumSpan0"></span>
+            </td>
+            <td>
+                <button onclick="removeRow(this)">Remove</button>
+            </td>
+        </tr>
+    </table>
+</form>
+

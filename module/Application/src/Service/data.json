@@ -1,0 +1,29 @@
+{
+	"tableName": "Table Name",
+	"columns": [{
+			"name": "R1",
+			"id": 1,
+			"readonly": false
+		},
+		{
+			"name": "R2",
+			"id": 2,
+			"readonly": false
+		},
+		{
+			"name": "R3",
+			"id": 3,
+			"readonly": false
+		},
+		{
+			"name": "Average",
+			"id": 4,
+			"readonly": true
+		},
+		{
+			"name": "Sum",
+			"id": 5,
+			"readonly": true
+		}
+	]
+}

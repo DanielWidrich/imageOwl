@@ -1,0 +1,18 @@
+<h2>Report</h2>
+<?php if(isset($error)){?>
+    <p style="color: red">There was an error writing data to the report.json file.  Please try again.</p>
+<?php
+} else {
+?>
+<table class="table-bordered">
+    <tr>
+        <?php foreach ($data as $rowArr){?>
+            <td style="padding: 10px; text-align: left">
+            <?php foreach ($rowArr as $key => $value){
+                echo $key.": ".$value?><br><?php
+            }
+        }?>
+    </tr>
+</table>
+<?php
+}
